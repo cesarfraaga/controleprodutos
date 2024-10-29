@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(value = "/produto")
 public class ProdutoController {
 
-    @Autowired //
+    @Autowired
     private ProdutoService service;
 
     @PostMapping(value = "/save")
@@ -38,7 +38,6 @@ public class ProdutoController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Produto> buscarPorId(@PathVariable Long id) {
-        //Long id = idRequest.getId();
         Produto produto = service.findById(id);
 
         if (produto != null) {
